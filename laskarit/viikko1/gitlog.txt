@@ -1,0 +1,113 @@
+commit c5d3e178fce553551f913238afd96cebd4fbd21c
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 21:07:37 2019 +0200
+
+    poistettin file1 ja uudelleennimettiin file2
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit cba7e28168ce79f138dfae2f7ea13d4942dbe0da
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:56:32 2019 +0200
+
+    lisättiin tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8d800fb0568b8ba012dbb205bafca6da8a7e95b5
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:38:13 2019 +0200
+
+    muutettiin ekaa ja kolmatta
+
+ eka.txt    | 21 ++-------------------
+ kolmas.txt |  2 +-
+ 2 files changed, 3 insertions(+), 20 deletions(-)
+
+commit 363d9f13201b82a34c080f10d219f8a6ab4addf4
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:34:36 2019 +0200
+
+    uudelleennimettin tiedosto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 06dc90921b05e48319e519bfd12921ff52689817
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:31:20 2019 +0200
+
+    poistettiin toinen
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b5dd25e642aa5086617da21451f026a8903904bc
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:25:04 2019 +0200
+
+    muutettiin tiedostoa
+
+ tiedosto.txt | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
+
+commit 01595f5fe5b37d824a0778000fcff82b5489860a
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 20:20:09 2019 +0200
+
+    paljon tekstiä tiedostoon
+
+ tiedosto.txt | 628 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 628 insertions(+)
+
+commit a0d372c83af930380899ece6d3243c09b64505ec
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 19:47:45 2019 +0200
+
+    lisättiin jotain tavaraa
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4e98d34c63bb398821ce35ee525c5a00ae46e918
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 19:46:21 2019 +0200
+
+    sisälö tokaan ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 01ed43a828c74a7f9244119674775fe295b16803
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 19:43:54 2019 +0200
+
+    lisättiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ea9edfc19319b4b12e0824eea5f1c2be7ddcadad
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 19:41:05 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 38b18f67126e082d4c0dd455258e67ad7c89c79d
+Author: PPeltola <murderbanana@gmail.com>
+Date:   Thu Mar 14 19:04:09 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
