@@ -1,6 +1,6 @@
-# JOKISIMPUKKA
+# cauldron
 
-Hello **you** pretty amazing *you*!
+Hello **you**, you pretty amazing *you*!
 
 ## Tehtävät
 ### Viikko 1
