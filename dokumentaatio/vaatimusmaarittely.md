@@ -38,6 +38,8 @@ Peliin keksii helposti lähes loputtomasti jatkokehitysideoita, ja alla oleva li
 
 - Hienompaa grafiikkaa (kehittäjä ei osaa itse, ehkä jonkun voisi tähän saada piirtämään jos jaksaisi panostaa)
 
+- Animaatioita
+
 - Jonkinlainen haasteemoodi jossa vihulaisia tulee loputtomasti yhä vaikenevissa aalloissa ja tarkoitus olisi selvitä mahdollisimman pitkään
 
 - Hienompi tekoäly vihulaisille

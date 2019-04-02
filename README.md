@@ -1,24 +1,27 @@
-# cauldron
+# OTM-defence
 
-Work in progress as always.
+Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Nimi vaihtuu kun keksin hyvän.
 
-## Tehtävät
-### Viikko 1
-[Komentorivi](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+## Dokumentaatio
 
-[Gitlog](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[Vaatimusmäärittely](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-### Viikko 2
+## Releaset
 
-[Kuvankaappaus testikattavuudesta](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko2/kuvakaappaus.png)
 
-### Viikko 3
+## Komentorivitoiminnot
 
-[Tehtävä 1](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko3/Teht1.jpg)
+### Testaus
 
-[Tehtävä 2](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko3/Teht2.jpg)
+Testit suoritetaan komennolla
 
-[Tehtävä 3](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko3/Teht3.jpg)
+```
+mvn test
+```
 
-[Tehtävä 4](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko3/Teht4.jpg)
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
 
