@@ -1,6 +1,6 @@
-#Vaatimusmäärittely
+# Vaatimusmäärittely
 
-##Sovelluksen tarkoitus
+## Sovelluksen tarkoitus
 
 Sovellus yhdistelisi klassiseen tower defense -peliin tietokoneella pelattavista roolipeleistä tuttua progressiota. Peli ainakin aluksi koostuisi ennalta luoduista missioista, joiden välissä pelaaja voisi päivittää arsenaaliaan. Pelin tulisi siis tallentaa pelaajan edistyminen pelissä tiedostoon, jotta se ei unohtuisi pelikertojen välissä. Jos se ei osoitu liian vaikeaksi, voisi peliin myös ottaa vaikutteita reaaliaikasista strategiapeleistä. Klassisessa tower defense -pelissähän hyökkääjät tulevat aalloissa kohti pelaajan tukikohtaa tai muuta puolustettavaa kohdetta, ja pelaaja voi näiden aaltojen välissä päivitellä rakennelmiaan. Idea olisi antaa pelaajalle enemmän kontrollia aaltojen aikana, vaikkapa jonkinlaisilla liikuteltavilla puolustajayksiköillä.
 
