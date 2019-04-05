@@ -1,3 +1,5 @@
+package domain;
+
 import domain.Base;
 import org.junit.Before;
 import org.junit.Test;

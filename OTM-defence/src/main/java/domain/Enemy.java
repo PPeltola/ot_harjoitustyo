@@ -11,4 +11,8 @@ public interface Enemy {
     public int getSpeed();
     
     public int getDamage();
+    
+    public int getRadius();
+    
+    public void move(int x, int y);
 }

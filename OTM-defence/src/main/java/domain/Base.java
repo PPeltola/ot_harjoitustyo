@@ -13,7 +13,7 @@ public class Base {
         this.xCoordinate = x;
         this.yCoordinate = y;
         this.health = MAX_HEALTH;
-        this.radius = 60;
+        this.radius = 64;
     }
     
     public boolean loseHealth(int amount) {
