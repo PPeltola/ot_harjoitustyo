@@ -4,7 +4,7 @@ Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Ni
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely](https://github.com/PPeltola/ot_harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+[Vaatimusmäärittely](https://github.com/PPeltola/ot_harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 ## Releaset
 
