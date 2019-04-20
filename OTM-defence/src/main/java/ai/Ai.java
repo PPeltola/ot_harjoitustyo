@@ -1,0 +1,19 @@
+package ai;
+
+import domain.Obstacle;
+import domain.Unit;
+
+public abstract class Ai {
+    
+    protected Unit enemy;
+    
+    public Ai(Unit enemy) {
+        this.enemy = enemy;
+    }
+    
+    public abstract void act(float f);
+    
+    public abstract void collide(Obstacle obstacle);
+    
+    public abstract void collide(Unit unit);
+}

@@ -1,6 +1,9 @@
 package domain;
 
-public class TestEnemy implements Enemy {
+import ai.RunnerAi;
+import com.badlogic.gdx.math.Circle;
+
+public class TestEnemy extends Unit {
     
     private int xCoordinate;
     private int yCoordinate;
@@ -8,6 +11,7 @@ public class TestEnemy implements Enemy {
     private int health;
     private int speed;
     private int damage;
+    private Circle bounds;
 
     public TestEnemy(int x, int y) {
         this.xCoordinate = x;
@@ -16,40 +20,48 @@ public class TestEnemy implements Enemy {
         this.health = 1000;
         this.speed = 8;
         this.damage = 200;
+        this.bounds = new Circle(x, y, radius);
+        this.ai = new RunnerAi(this);
     }
 
     @Override
     public int getXCoordinate() {
-        return this.xCoordinate;
+        return xCoordinate;
     }
 
     @Override
     public int getYCoordinate() {
-        return this.yCoordinate;
+        return yCoordinate;
     }
 
     @Override
     public int getHealth() {
-        return this.health;
+        return health;
     }
 
     @Override
     public int getSpeed() {
-        return this.speed;
+        return speed;
     }
 
     @Override
     public int getDamage() {
-        return this.damage;
+        return damage;
     }
     
     public int getRadius() {
-        return this.radius;
+        return radius;
     }  
 
     @Override
     public void move(int x, int y) {
-        this.xCoordinate += x;
-        this.yCoordinate += y;
+        xCoordinate += x;
+        yCoordinate += y;
+        bounds.setPosition(xCoordinate + radius, yCoordinate + radius);
+    }
+
+    @Override
+    public Circle getBounds() {
+        return bounds;
     }
 }
