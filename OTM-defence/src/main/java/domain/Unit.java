@@ -2,6 +2,7 @@ package domain;
 
 import ai.Ai;
 import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Vector2;
 
 public abstract class Unit {
     
@@ -19,9 +20,7 @@ public abstract class Unit {
         ai.act(delta);
     }
 
-    public abstract int getXCoordinate();
-
-    public abstract int getYCoordinate();
+    public abstract Vector2 getLocation();
 
     public abstract int getHealth();
 
@@ -30,6 +29,8 @@ public abstract class Unit {
     public abstract int getDamage();
     
     public abstract void move(int x, int y);
+    
+    public abstract void move(Vector2 amount);
 
     public abstract Circle getBounds();
 }

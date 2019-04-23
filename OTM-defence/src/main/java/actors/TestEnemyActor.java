@@ -15,7 +15,7 @@ public class TestEnemyActor extends UnitActor {
     
     @Override
     public void draw(Batch batch, float alpha) {
-        batch.draw(texture, unit.getXCoordinate(), unit.getYCoordinate());
+        batch.draw(texture, unit.getLocation().x - unit.getBounds().radius, unit.getLocation().y - unit.getBounds().radius);
     }
     
     @Override

@@ -2,11 +2,11 @@ package domain;
 
 import ai.RunnerAi;
 import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Vector2;
 
 public class TestEnemy extends Unit {
     
-    private int xCoordinate;
-    private int yCoordinate;
+    private Vector2 location;
     private int radius;
     private int health;
     private int speed;
@@ -14,8 +14,7 @@ public class TestEnemy extends Unit {
     private Circle bounds;
 
     public TestEnemy(int x, int y) {
-        this.xCoordinate = x;
-        this.yCoordinate = y;
+        this.location = new Vector2(x, y);
         this.radius = 8;
         this.health = 1000;
         this.speed = 8;
@@ -25,13 +24,8 @@ public class TestEnemy extends Unit {
     }
 
     @Override
-    public int getXCoordinate() {
-        return xCoordinate;
-    }
-
-    @Override
-    public int getYCoordinate() {
-        return yCoordinate;
+    public  Vector2 getLocation() {
+        return location;
     }
 
     @Override
@@ -55,9 +49,15 @@ public class TestEnemy extends Unit {
 
     @Override
     public void move(int x, int y) {
-        xCoordinate += x;
-        yCoordinate += y;
-        bounds.setPosition(xCoordinate + radius, yCoordinate + radius);
+        System.out.println(bounds);
+        location.add(x, y);
+        bounds.setPosition(location.x, location.y);
+    }
+    
+    @Override
+    public void move(Vector2 amount) {
+        location.add(amount);
+        bounds.setPosition(location.x, location.y);
     }
 
     @Override

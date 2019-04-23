@@ -36,7 +36,7 @@ public class MissionLogic {
     public void initStage() {
         addActor(new BaseActor(new Base(512, 394)));
         addObstacle(new Obstacle());
-        addUnit(new TestEnemyActor(new TestEnemy(0, 0)));
+        addUnit(new TestEnemyActor(new TestEnemy(300, 300)));
     }
 
     public void addActor(Actor actor) {
@@ -57,8 +57,6 @@ public class MissionLogic {
         startingTime += f;
         timeSinceLastSpawn += f;
         
-        
-
         if (timeSinceLastSpawn >= 5) {
             addUnit(new TestEnemyActor(new TestEnemy(0, 0)));
             timeSinceLastSpawn = 0;
@@ -79,6 +77,7 @@ public class MissionLogic {
                 
                 if (other != unit && collision.checkUnitCollisionWithUnit(unit, other)) {
                     other.collide(unit);
+                    unit.collide(other);
                 }
             }
 

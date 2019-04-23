@@ -17,8 +17,7 @@ public class PolygonCollisionUtil {
         float squareRadius = circle.radius * circle.radius;
         for (int i = 0; i < vertices.length; i += 2) {
             if (i == 0) {
-                if (Intersector.intersectSegmentCircle(vec1.set(vertices[vertices.length - 2], vertices[vertices.length - 1]),
-                        vec2.set(vertices[i], vertices[i + 1]), center, squareRadius)) {
+                if (Intersector.intersectSegmentCircle(vec1.set(vertices[vertices.length - 2], vertices[vertices.length - 1]), vec2.set(vertices[i], vertices[i + 1]), center, squareRadius)) {
                     return true;
                 }
             } else {
@@ -27,7 +26,7 @@ public class PolygonCollisionUtil {
                 }
             }
         }
-        System.out.println(circle.x + ", " + circle.y);
+        //System.out.println(circle.x + ", " + circle.y);
         return polygon.contains(circle.x, circle.y);
 
     }
