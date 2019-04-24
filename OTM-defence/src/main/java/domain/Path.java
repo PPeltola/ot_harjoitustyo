@@ -35,8 +35,8 @@ public class Path {
         return spawningPosition;
     }
     
-    public boolean isEmpty() {
-        return points.isEmpty();
+    public boolean ends() {
+        return points.size == 1;
     }
 
     public Queue<Vector2> getPoints() {

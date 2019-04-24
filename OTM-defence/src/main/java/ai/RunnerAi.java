@@ -48,11 +48,13 @@ public class RunnerAi extends Ai {
         
         if (enemy.getLocation().equals(movingTo)) {
             setStopped(true);
-            if (!path.isEmpty()) {
+            if (!path.ends()) {
+                System.out.println(path.getPoints().size);
                 setMovingTo(path.getNextPoint());
                 setStopped(false);
             }
         }
+
         
         if (!stopped && timePassedSinceLastAction >= 1 / this.enemy.getSpeed()) {
             
@@ -60,15 +62,15 @@ public class RunnerAi extends Ai {
             currentMove = currentMove.sub(enemy.getLocation());
             
 //            System.out.println(currentMove);
-            System.out.println(currentMoveStart.angle());
-            System.out.println(currentMove.angle());
-            System.out.println(currentMoveStart.angle(currentMove));
+//            System.out.println(currentMoveStart.angle());
+//            System.out.println(currentMove.angle());
+//            System.out.println(currentMoveStart.angle(currentMove));
             
-            if (currentMove.angle(currentMoveStart) < 0) {
-                enemy.move(MathUtils.clamp((int)(movingTo.x - enemy.getLocation().x), -1, 1), 0);
+            if (currentMove.x == 0  || Math.abs(currentMove.y / currentMove.x) > Math.abs(currentMoveStart.y / currentMoveStart.x)) {
+                enemy.move(0, MathUtils.clamp((int)(currentMove.y), -1, 1));
             } else {
-                enemy.move(0, MathUtils.clamp((int)(movingTo.y - enemy.getLocation().y), -1, 1));
-            }
+                enemy.move(MathUtils.clamp((int)(currentMove.x), -1, 1), 0);
+            } 
             
             timePassedSinceLastAction = 0;
         }

@@ -43,7 +43,7 @@ public class MissionLogic {
         mapLoader.loadMap(new File("maps/" + mapName));
         addActor(map.getBase());
 
-        Path path = map.getPath(2);
+        Path path = map.getPath(0);
         TestEnemy enemy = new TestEnemy(path.getSpawningPosition());
         enemy.setPath(path);
         addUnit(new TestEnemyActor(enemy));
@@ -66,13 +66,13 @@ public class MissionLogic {
         startingTime += f;
         timeSinceLastSpawn += f;
 
-//        if (timeSinceLastSpawn >= 5) {
-//            Path path = map.getPath((int)startingTime % 3);
-//            TestEnemy enemy = new TestEnemy(path.getSpawningPosition());
-//            enemy.setPath(path);
-//            addUnit(new TestEnemyActor(enemy));
-//            timeSinceLastSpawn = 0;
-//        }
+        if (timeSinceLastSpawn >= 5) {
+            Path path = map.getPath((int)startingTime % 3);
+            TestEnemy enemy = new TestEnemy(path.getSpawningPosition());
+            enemy.setPath(path);
+            addUnit(new TestEnemyActor(enemy));
+            timeSinceLastSpawn = 0;
+        }
         for (int i = 0; i < units.size; i++) {
             Unit unit = units.get(i);
 
