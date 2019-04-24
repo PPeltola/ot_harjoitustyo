@@ -1,17 +1,17 @@
 package domain;
 
-import domain.Base;
+import domain.TestBase;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BaseTest {
     
-    Base base;
+    TestBase base;
     
     @Before
     public void setUp() {
-        base = new Base(512, 384);
+        base = new TestBase(512, 384);
     }
     
     @Test

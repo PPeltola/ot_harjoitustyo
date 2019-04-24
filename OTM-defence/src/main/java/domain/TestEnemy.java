@@ -13,13 +13,13 @@ public class TestEnemy extends Unit {
     private int damage;
     private Circle bounds;
 
-    public TestEnemy(int x, int y) {
-        this.location = new Vector2(x, y);
+    public TestEnemy(Vector2 spawnPoint) {
+        this.location = spawnPoint;
         this.radius = 8;
         this.health = 1000;
         this.speed = 8;
         this.damage = 200;
-        this.bounds = new Circle(x, y, radius);
+        this.bounds = new Circle(spawnPoint, radius);
         this.ai = new RunnerAi(this);
     }
 
@@ -49,7 +49,6 @@ public class TestEnemy extends Unit {
 
     @Override
     public void move(int x, int y) {
-        System.out.println(bounds);
         location.add(x, y);
         bounds.setPosition(location.x, location.y);
     }
@@ -63,5 +62,10 @@ public class TestEnemy extends Unit {
     @Override
     public Circle getBounds() {
         return bounds;
+    }
+
+    @Override
+    public void setPath(Path path) {
+        ai.setPath(path);
     }
 }

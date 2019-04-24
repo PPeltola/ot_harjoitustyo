@@ -3,26 +3,26 @@ package actors;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import domain.Base;
+import domain.TestBase;
 
-public class BaseActor extends Actor {
+public class TestBaseActor extends Actor {
     
-    private Base base;
+    private TestBase base;
     private Texture texture;
 
-    public BaseActor(Base base) {
+    public TestBaseActor(TestBase base) {
         this.base = base;
         this.texture = new Texture("assets/bases/testbase.png");
     }
 
-    public BaseActor(Base base, Texture texture) {
+    public TestBaseActor(TestBase base, Texture texture) {
         this.base = base;
         this.texture = texture;
     }
     
     @Override
     public void draw(Batch batch, float alpha) {
-        batch.draw(texture, base.getXCoordinate() - base.getRadius(), base.getYCoordinate() - base.getRadius());
+        batch.draw(texture, base.getLocation().x - base.getBounds().radius, base.getLocation().y - base.getBounds().radius);
     }
     
 }

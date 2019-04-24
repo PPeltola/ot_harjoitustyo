@@ -33,4 +33,6 @@ public abstract class Unit {
     public abstract void move(Vector2 amount);
 
     public abstract Circle getBounds();
+    
+    public abstract void setPath(Path path);
 }

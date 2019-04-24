@@ -1,6 +1,7 @@
 package ai;
 
 import domain.Obstacle;
+import domain.Path;
 import domain.Unit;
 
 public abstract class Ai {
@@ -10,6 +11,8 @@ public abstract class Ai {
     public Ai(Unit enemy) {
         this.enemy = enemy;
     }
+    
+    public abstract void setPath(Path path);
     
     public abstract void act(float f);
     

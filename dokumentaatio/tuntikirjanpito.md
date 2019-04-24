@@ -7,4 +7,7 @@
 | 5.4. | 5 | Grafiikkakirjastojen tutkimista ja LibGDX:n opettelua sekä sen käyttöönottoa |
 | 9.4. | 5 | LibGDX:n AI-kirjaston tutkiskelua ja projektin pikkusäätöä |
 | 21.4. | 6 | Isoa refaktorointia, kollision ja tekoälyn toteutusrakenteen luonnostelua, erinäisiä rajapintoja ja muuta hienosäätöä. Yksinkertaisen kollision toteutusesimerkki  |
-| 22.4. | 4 | Vihulaisten liikkumisen ja tekoälyn kokeilua ja säätöä, tekstuurin piirtämiseen littyvän bugin korjaamista, loogisemman viivaa pitkin liikumiseen tarkoitetun metodin toteutaminen |
+| 23.4. | 4 | Vihulaisten liikkumisen ja tekoälyn kokeilua ja säätöä, tekstuurin piirtämiseen littyvän bugin korjaamista, loogisemman viivaa pitkin liikumiseen tarkoitetun metodin toteutaminen |
+| 24.4. | 8 | Yksinkertaisen kartantalletusjärjestelmän luominen ja testikartan kartoittaminen, tekoälyn säätöä ja siihen hajoilua |
+| :----:|:-----| :-----|
+| Summa | 32 |
