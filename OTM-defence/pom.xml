@@ -41,6 +41,12 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.0</version>
+                <configuration>
+                    <excludes>
+                        <exclude>game/gui/*</exclude>
+                        <exclude>game/gui/actors/*</exclude>
+                    </excludes>
+                </configuration> 
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>

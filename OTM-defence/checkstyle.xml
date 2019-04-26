@@ -35,6 +35,7 @@
             <property name="countEmpty" value="false"/>
         </module>
 
+	<!--
         <module name="JavadocMethod">
             <property name="scope" value="public"/>
             <property name="allowMissingParamTags" value="false"/>
@@ -48,6 +49,7 @@
             <property name="scope" value="public"/>
             <property name="checkEmptyJavadoc" value="true"/>
         </module>
+	-->
 
         <!--- Naming Conventions -->
 
