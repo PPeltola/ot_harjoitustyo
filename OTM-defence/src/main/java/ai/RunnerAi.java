@@ -2,6 +2,7 @@ package ai;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.MathUtils;
+import domain.Base;
 import domain.Obstacle;
 import domain.Path;
 import domain.Unit;
@@ -35,44 +36,42 @@ public class RunnerAi extends Ai {
 //            startingAngle = help.angle();
         }
     }
-    
+
     public void setPath(Path newPath) {
         path = newPath;
         setMovingTo(path.getNextPoint());
-        
+
     }
-    
+
     @Override
     public void act(float delta) {
         timePassedSinceLastAction += delta;
-        
+
         if (enemy.getLocation().equals(movingTo)) {
             setStopped(true);
             if (!path.ends()) {
-                System.out.println(path.getPoints().size);
+//                System.out.println(path.getPoints().size);
                 setMovingTo(path.getNextPoint());
                 setStopped(false);
             }
         }
 
-        
-        if (!stopped && timePassedSinceLastAction >= 1 / this.enemy.getSpeed()) {
-            
-            Vector2 currentMove = new Vector2(movingTo);
-            currentMove = currentMove.sub(enemy.getLocation());
-            
-//            System.out.println(currentMove);
-//            System.out.println(currentMoveStart.angle());
-//            System.out.println(currentMove.angle());
-//            System.out.println(currentMoveStart.angle(currentMove));
-            
-            if (currentMove.x == 0  || Math.abs(currentMove.y / currentMove.x) > Math.abs(currentMoveStart.y / currentMoveStart.x)) {
-                enemy.move(0, MathUtils.clamp((int)(currentMove.y), -1, 1));
-            } else {
-                enemy.move(MathUtils.clamp((int)(currentMove.x), -1, 1), 0);
-            } 
-            
-            timePassedSinceLastAction = 0;
+//        System.out.println(timePassedSinceLastAction + " " + this.enemy.getSpeed() + " " + (timePassedSinceLastAction >= 1 / this.enemy.getSpeed()));
+        if (!stopped) {
+
+            while (timePassedSinceLastAction >= 1.0 / enemy.getSpeed()) {
+//                System.out.println(timePassedSinceLastAction + " " + 1.0 / enemy.getSpeed());
+                Vector2 currentMove = new Vector2(movingTo);
+                currentMove = currentMove.sub(enemy.getLocation());
+
+                if (currentMove.x == 0 || Math.abs(currentMove.y / currentMove.x) > Math.abs(currentMoveStart.y / currentMoveStart.x)) {
+                    enemy.move(0, MathUtils.clamp((int) (currentMove.y), -1, 1));
+                } else {
+                    enemy.move(MathUtils.clamp((int) (currentMove.x), -1, 1), 0);
+                }
+
+                timePassedSinceLastAction -= (1.0 / this.enemy.getSpeed());
+            }
         }
     }
 
@@ -83,7 +82,13 @@ public class RunnerAi extends Ai {
 
     @Override
     public void collide(Unit unit) {
-        setStopped(true);
+        //setStopped(true);
+    }
+
+    @Override
+    public void overlap(Base base) {
+        base.loseHealth(enemy.getDamage());
+        enemy.die();
     }
 
 }

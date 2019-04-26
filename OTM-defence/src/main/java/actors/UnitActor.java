@@ -1,23 +1,29 @@
 package actors;
 
-import ai.Ai;
-import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import domain.Obstacle;
 import domain.Unit;
 
 public abstract class UnitActor extends Actor {
 
     protected Unit unit;
     
-
     public UnitActor(Unit unit) {
         this.unit = unit;
     }
 
+    @Override
+    public void act(float delta) {
+        if (!unit.isAlive()) {
+            this.remove();
+        } else {
+            unit.act(delta);
+        }
+    }
+    
     public Unit getUnit() {
         return unit;
     }
-
-    //public abstract Circle getBounds();
+    
+    public abstract void drawHealthBar(ShapeRenderer shapeRenderer);
 }

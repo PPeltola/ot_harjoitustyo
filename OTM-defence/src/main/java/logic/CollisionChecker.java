@@ -1,10 +1,11 @@
 package logic;
 
-import actors.Map;
+import map.Map;
 import actors.ObstacleActor;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import domain.Base;
 import domain.Obstacle;
 import utils.PolygonCollisionUtil;
 import domain.Unit;
@@ -19,8 +20,7 @@ public class CollisionChecker {
         return unit.getBounds().overlaps(collidingWith.getBounds());
     }
     
-//    public boolean overlaps(float[] vertices, Circle circle) {
-//        return false;
-//    }
-    
+    public boolean checkUnitCompleteOverlapWithBase(Unit unit, Base base) {
+        return base.getBounds().contains(unit.getBounds());
+    }    
 }

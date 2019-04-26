@@ -9,5 +9,6 @@
 | 21.4. | 6 | Isoa refaktorointia, kollision ja tekoälyn toteutusrakenteen luonnostelua, erinäisiä rajapintoja ja muuta hienosäätöä. Yksinkertaisen kollision toteutusesimerkki  |
 | 23.4. | 4 | Vihulaisten liikkumisen ja tekoälyn kokeilua ja säätöä, tekstuurin piirtämiseen littyvän bugin korjaamista, loogisemman viivaa pitkin liikumiseen tarkoitetun metodin toteutaminen |
 | 24.4. | 8 | Yksinkertaisen kartantalletusjärjestelmän luominen ja testikartan kartoittaminen, tekoälyn säätöä ja siihen hajoilua |
+| 25.4. | 4 | Tukikohdan luokkien refaktorointia ja healthbarit |
 | :----:|:-----| :-----|
-| Summa | 32 |
+| Summa | 36 |

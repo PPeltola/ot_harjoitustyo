@@ -12,6 +12,7 @@ public class Launcher {
         cfg.width = 1024;
         cfg.height = 768;
         cfg.resizable = false;
+        cfg.forceExit = true;
         
         new LwjglApplication(new OTMdefence(), cfg);
     }

@@ -1,6 +1,8 @@
-package actors;
+package map;
 
 import actors.ObstacleActor;
+import actors.ObstacleActor;
+import actors.TestBaseActor;
 import com.badlogic.gdx.graphics.Color;
 import static com.badlogic.gdx.graphics.Color.TAN;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
@@ -23,35 +25,6 @@ public class Map {
         this.paths = new Array<>(true, 8);
     }
     
-    public void drawTerrain(PolygonSpriteBatch batch) {
-        batch.begin();
-        
-        for (ObstacleActor obstacleActor : obstacleActors) {
-            obstacleActor.draw(batch);
-        }
-        
-        batch.end();
-    }
-    
-    public void drawPaths(ShapeRenderer shapeRenderer) {
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.CYAN);
-        
-        for (Path path : paths) {
-            Iterator<Vector2> iterator = path.getPointIterator();
-            Vector2 currentPoint = iterator.next();
-            Vector2 nextPoint;
-            
-            while (iterator.hasNext()) {
-                nextPoint = iterator.next();
-                shapeRenderer.line(currentPoint, nextPoint);
-                currentPoint = nextPoint;
-            }
-        }
-        
-        shapeRenderer.end();
-    }
-    
     public void addObstacle(Obstacle obstacle) {
         obstacleActors.add(new ObstacleActor(obstacle, TAN));
     }
@@ -59,16 +32,20 @@ public class Map {
     public void addPath(Path path) {
         paths.add(path);
     }
+
+    public Array<Path> getPaths() {
+        return paths;
+    }
     
     public Path getPath(int i) {
         return new Path(paths.get(i));
     }
     
-    public void setBase(TestBase base) {
+    public void setBaseActor(TestBase base) {
         this.base = new TestBaseActor(base);
     }
 
-    public TestBaseActor getBase() {
+    public TestBaseActor getBaseActor() {
         return base;
     }
 

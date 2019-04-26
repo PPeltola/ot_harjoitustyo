@@ -1,5 +1,6 @@
 package ai;
 
+import domain.Base;
 import domain.Obstacle;
 import domain.Path;
 import domain.Unit;
@@ -19,4 +20,6 @@ public abstract class Ai {
     public abstract void collide(Obstacle obstacle);
     
     public abstract void collide(Unit unit);
+
+    public abstract void overlap(Base base);
 }

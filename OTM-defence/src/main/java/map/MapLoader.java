@@ -1,6 +1,5 @@
-package logic;
+package map;
 
-import actors.Map;
 import com.badlogic.gdx.math.Vector2;
 import domain.Obstacle;
 import domain.Path;
@@ -51,7 +50,7 @@ public class MapLoader {
     public void loadBase(String[] fields) {
         switch (fields[1]) {
             case "TestBase":
-                map.setBase(new TestBase(Integer.parseInt(fields[2]), Integer.parseInt(fields[3])));
+                map.setBaseActor(new TestBase(Integer.parseInt(fields[2]), Integer.parseInt(fields[3])));
                 break;
         }
     }
