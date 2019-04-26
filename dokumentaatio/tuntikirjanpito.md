@@ -10,5 +10,6 @@
 | 23.4. | 4 | Vihulaisten liikkumisen ja tekoälyn kokeilua ja säätöä, tekstuurin piirtämiseen littyvän bugin korjaamista, loogisemman viivaa pitkin liikumiseen tarkoitetun metodin toteutaminen |
 | 24.4. | 8 | Yksinkertaisen kartantalletusjärjestelmän luominen ja testikartan kartoittaminen, tekoälyn säätöä ja siihen hajoilua |
 | 25.4. | 4 | Tukikohdan luokkien refaktorointia ja healthbarit |
+| 26.4. | 4 | Refaktorointia, testailua, javadocceja, checkstylen fiksailua, yms. |
 | :----:|:-----| :-----|
-| Summa | 36 |
+| Summa | 40 |
