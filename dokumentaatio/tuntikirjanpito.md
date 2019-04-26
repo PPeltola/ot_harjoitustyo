@@ -11,5 +11,4 @@
 | 24.4. | 8 | Yksinkertaisen kartantalletusjärjestelmän luominen ja testikartan kartoittaminen, tekoälyn säätöä ja siihen hajoilua |
 | 25.4. | 4 | Tukikohdan luokkien refaktorointia ja healthbarit |
 | 26.4. | 4 | Refaktorointia, testailua, javadocceja, checkstylen fiksailua, yms. |
-| :----:|:-----| :-----|
 | Summa | 40 |
