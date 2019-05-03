@@ -13,4 +13,3 @@
 | 26.4. | 4 | Refaktorointia, testailua, javadocceja, checkstylen fiksailua, yms. |
 | 3.5. | 9 | Paljon refaktorointia, tornien ja bullet trailien luominen, about lopullisen toiminnallisuuden viimeistely |
 | Summa | 49 |
-
