@@ -1,9 +1,10 @@
 package game.gui.actors;
 
+import game.gui.HealthBar;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import game.domain.Unit;
+import game.domain.TestEnemy;
 
 public class TestEnemyActor extends UnitActor {
     
@@ -16,9 +17,9 @@ public class TestEnemyActor extends UnitActor {
     private Texture texture;
     private HealthBar healthBar;
 
-    public TestEnemyActor(Unit enemy) {
+    public TestEnemyActor(TestEnemy enemy) {
         super(enemy);
-        this.texture = new Texture("assets/enemies/testenemy.png");
+        this.texture = new Texture("src/main/resources/assets/enemies/testenemy.png");
         this.healthBar = new HealthBar(HEALTHBAR_WIDTH, HEALTHBAR_HEIGHT);
     }
     
@@ -32,6 +33,7 @@ public class TestEnemyActor extends UnitActor {
         super.act(delta);
     }
     
+    @Override
     public void drawHealthBar(ShapeRenderer shapeRenderer) {
         if (unit.getTimeSinceDamageTaken() <= HEALTHBAR_TIME_VISIBLE) {
             healthBar.draw(shapeRenderer, (int) (unit.getLocation().x + HEALTHBAR_X_OFFSET), (int) (unit.getLocation().y + HEALTHBAR_Y_OFFSET), unit.getMaxHealth(), unit.getHealth());

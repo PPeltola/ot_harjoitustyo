@@ -1,4 +1,4 @@
-package game.gui.actors;
+package game.gui;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;

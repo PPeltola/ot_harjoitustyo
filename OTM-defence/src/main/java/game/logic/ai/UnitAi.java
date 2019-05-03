@@ -5,11 +5,13 @@ import game.domain.Obstacle;
 import game.domain.Path;
 import game.domain.Unit;
 
-public abstract class Ai {
+public abstract class UnitAi {
     
     protected Unit enemy;
+    protected float timePassedSinceLastAction;
+    protected boolean stopped;
     
-    public Ai(Unit enemy) {
+    public UnitAi(Unit enemy) {
         this.enemy = enemy;
     }
     

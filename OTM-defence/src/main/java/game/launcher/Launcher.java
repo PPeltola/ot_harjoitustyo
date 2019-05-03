@@ -1,5 +1,6 @@
-package game.logic;
+package game.launcher;
 
+import game.launcher.OTMdefence;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 

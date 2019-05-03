@@ -7,12 +7,10 @@ import game.domain.Obstacle;
 import game.domain.Path;
 import game.domain.Unit;
 
-public class RunnerAi extends Ai {
-
-    private float timePassedSinceLastAction;
+public class RunnerAi extends UnitAi {
+    
     private Vector2 movingTo;
     private Vector2 currentMoveStart;
-    private boolean stopped;
     private Path path;
 
     public RunnerAi(Unit enemy) {

@@ -1,12 +1,12 @@
 package game.domain;
 
-import game.logic.ai.Ai;
+import game.logic.ai.UnitAi;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public abstract class Unit {
 
-    protected Ai ai;
+    protected UnitAi ai;
     protected boolean alive;
     protected float timeSinceDamageTaken;
     protected int health;
@@ -14,6 +14,7 @@ public abstract class Unit {
     protected int speed;
     protected int damage;
     protected Circle bounds;
+    protected int moneyOnKill;
 
     /**
      * Creates a new Unit and initializes the location to the given value.
@@ -55,6 +56,10 @@ public abstract class Unit {
 
     public int getHealth() {
         return health;
+    }
+
+    public int getMoneyOnKill() {
+        return moneyOnKill;
     }
 
     public boolean isAlive() {

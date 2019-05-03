@@ -12,6 +12,14 @@ public class PolygonCollisionUtil {
     static final Vector2 VECTOR_B = new Vector2();
 
     public static boolean overlaps(Polygon polygon, Circle circle) {
+        return (!edgesOverlap(polygon, circle) && polygon.contains(CENTER));
+    }
+
+    public static boolean contains(Polygon polygon, Circle circle) {
+        return (!edgesOverlap(polygon, circle) && !polygon.contains(CENTER));
+    }
+    
+    private static boolean edgesOverlap(Polygon polygon, Circle circle) {
         float[] vertices = polygon.getTransformedVertices();
         CENTER.set(circle.x, circle.y);
         float squareRadius = circle.radius * circle.radius;
@@ -26,7 +34,6 @@ public class PolygonCollisionUtil {
                 }
             }
         }
-        
-        return polygon.contains(circle.x, circle.y);
+        return false;
     }
 }

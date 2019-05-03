@@ -1,16 +1,17 @@
 package game.domain;
 
-import game.gui.actors.HealthBar;
+import game.gui.HealthBar;
 import game.logic.ai.RunnerAi;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
 public class TestEnemy extends Unit {
 
-    private static final int MAX_HEALTH = 800;
+    private static final int MAX_HEALTH = 600;
     private static final int MAX_SPEED = 64;
     private static final int RADIUS = 8;
     private static final int DAMAGE = 2000;
+    private static final int MONEY_ON_KILL = 10;
 
     /**
      * Creates the TestEnemy by calling the Unit constructor as well as
@@ -25,6 +26,7 @@ public class TestEnemy extends Unit {
         this.health = MAX_HEALTH;
         this.speed = MAX_SPEED;
         this.damage = DAMAGE;
+        this.moneyOnKill = MONEY_ON_KILL;
         this.bounds = new Circle(spawnPoint, RADIUS);
         this.ai = new RunnerAi(this);
     }
@@ -34,6 +36,7 @@ public class TestEnemy extends Unit {
         return MAX_HEALTH;
     }
 
+    @Override
     public int getMaxSpeed() {
         return MAX_SPEED;
     }

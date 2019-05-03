@@ -1,5 +1,6 @@
 package game.gui.actors;
 
+import game.gui.HealthBar;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -17,7 +18,7 @@ public class TestBaseActor extends BaseActor {
 
     public TestBaseActor(TestBase base) {
         super(base);
-        this.texture = new Texture("assets/bases/testbase.png");
+        this.texture = new Texture("src/main/resources/assets/bases/testbase.png");
         this.healthBar = new HealthBar(HEALTHBAR_WIDTH, HEALTHBAR_HEIGHT);
     }
 

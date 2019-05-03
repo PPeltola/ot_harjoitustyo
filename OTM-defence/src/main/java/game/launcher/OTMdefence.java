@@ -1,4 +1,4 @@
-package game.logic;
+package game.launcher;
 
 import com.badlogic.gdx.Game;
 import game.gui.MissionScreen;
