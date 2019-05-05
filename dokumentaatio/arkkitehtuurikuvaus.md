@@ -22,6 +22,8 @@ Käyttöliittymässä on (toistaiseksi) vain yksi näkymä, joka on pelinaikaine
 
 Käyttöliittymän ainoa suoraan interaktiivinen osa on nappi, jota painamalla pelaaja voi rakentaa kartalle uuden tornin. Nappia painettuaan (olettaen että pelaajalla on varaa) pelaaja pääsee rakentamaan tornia, jolloin hiiren kursorin kohdalla näkyy hiiren kursorin kohdalle rakennettavan mahdollisen tornin koko sekä sen laillisuus vihreänä tai punaisena sekä sen kantama. Uudestaan klikkaamalla torni rakentuu jos sen sijainti on laillinen sekä torninrakennusmoodi menee pois päältä. Jos pelaaja torninrakennusmoodissa klikkaa uudestaan rakentamisnappia, menee moodi pois päältä ilman tornin rakentumista.
 
+Käyttöliittymäluokassa on kaksi luokkaa jotka eivät ole suoranaisesti osa domainia taikka Actoreita: HealthBar ja BulletTrail. Nämä luokat ovat nimiensä mukaisten puhtaasti graafisten elementtien piirron toteuttamisen avuksi luotuja luokkia, jotka saatettaisiin jatkokehittäessä sijoittaa erikoistuneempiin pakkauksiin, esim. HealthBar pelinsisäistä käyttöliittymää kuten troninrakennusnappeja sisältävään ui-pakkaukseen.
+
 ## Sovelluslogiikka
 
 Sovelluksen loogisen datamallin muodostavat _game.domain_-pakkauksen luokat Obstacle, Path, TestBase, TestEnemy ja TestTower sekä _game.map_ luokan Map, _game.logic_ luokan MissionLogic, _game.gui_ luokan BulletTrail sekä _game.logic.ai_-luokan RunnerAi ja TurretAi.
