@@ -2,50 +2,49 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus yhdistelisi klassiseen tower defense -peliin tietokoneella pelattavista roolipeleistä tuttua progressiota. Peli ainakin aluksi koostuisi ennalta luoduista missioista, joiden välissä pelaaja voisi päivittää arsenaaliaan. Pelin tulisi siis tallentaa pelaajan edistyminen pelissä tiedostoon, jotta se ei unohtuisi pelikertojen välissä. Jos se ei osoitu liian vaikeaksi, voisi peliin myös ottaa vaikutteita reaaliaikasista strategiapeleistä. Klassisessa tower defense -pelissähän hyökkääjät tulevat aalloissa kohti pelaajan tukikohtaa tai muuta puolustettavaa kohdetta, ja pelaaja voi näiden aaltojen välissä päivitellä rakennelmiaan. Idea olisi antaa pelaajalle enemmän kontrollia aaltojen aikana, vaikkapa jonkinlaisilla liikuteltavilla puolustajayksiköillä.
+Sovellus toetuttaa yksinkertaisen version klassisesta tower defense -pelistä. Pelissä pelaaja koittaa torjua tukikohtaa kohti marssivia vihollisia rakentamalla torneja jotka ampuvat vihollisia. Vihollisia tulee ajan kuluessa suurempia määriä ja niiden tappamisesta pelaaja saa rahaa, jolla taas voi ostaa enemmän torneja.
 
 ## Perusversion tarjoama toiminnallisuus
 
-- Perusnäkymässä käyttäjä näkee missiovalikon ja pääsee käsiksi erilaisiin päivitysvalikkoihin
+- Pelin käynnistyessä pelaaja näkee kartan ja käytettävissä olevat resurssit:
+  - Maaston, jolle pelaaja voi rakentaa torneja
+  - Tukikohdan, jota pelaajan tulee puolustaa
+  - Vihollisten marssireitit, joita pitkin vihollisia alkaa valumaan kohti tukikohtaa
+  - Saatavilla olevat tornit ja niiden rakentamiseen käytettävät napit, joissa ilmenee tornin hinta
+  - Rahamäärän, jolla pelaaja voi rakentaa torneja
 
-- Pelaaja voi valita jonkin avoinna olevan mission ja pystyy tätrn käynnistämään itse pelin
+- Pienen hetken kuluttua vihollisia alkaa valumaan kohti tukikohtaa
 
-- Pelaaja voi asettaa erilaisia torneja tai muita rakennelmia pelikartalle
+- Pelaaja voi millon tahansa rahojen riittäessä asettaa torneja
 
-- Pelaajan ollessa valmis hyökkäysaalto alkaisis, ja jonkinnäköiset vihulaiset alkaisivat marssimaan kohti puolustettavaa kohdetta kartan sallimia reittejä.
+- Tornia asettaessa pelaaja näkee onko sen hetkinen hiiren sijainti sopiva paikka tornille sekä mahdollisen tornin kantaman
 
-- Pelaajan asettamat tornit todella ampuisivat vihulaisia tai muuten estäisivät hyökkäystä
+- Rakennettu torni seuraa tykillään kohdettaan ja ampuu tätä määritellyin väliajoin
 
-- Vihulaiset voisivat kohteeseensa päästyä tuhota sen ja näin pelaaja voisi hävitä pelin
+- Ampumisesta piirtyy jälki ja se vahingoittaa vihollista 
 
-- Joko aaltojen välissä ja/tai vihulaisten tappamisesta saisi mission aikana käytettävää valuuttaa, jolla voisi rakentaa uusia torneja tai kenties päivittää jo olemassa olevia torneja
-
-- Pelaaja voisi voittaa mission torjumalla kaikki hyökkysaallot
-
-- Mission voittamisesta saisi jonkinnäköistä valuuttaa, jolla voisi sitten päivittää torniarsenaalia siihen tarkoitetusta valikosta
-
-- Peli tallettaisi pelaajan edistyksen eli ainakin voitetut missiot, tornien päivitysaseen sekä jäljellä olevan valuutan määrän jonkinnäköiseen tiedostoon
+- Vihollisen tappaminen antaa pelaajalle jonkin määrän rahaa
 
 ## Jatkokehtysideoita
 
-Peliin keksii helposti lähes loputtomasti jatkokehitysideoita, ja alla oleva lista ei missään nimessä ole edes kovin kattava valikoima kaikista suunnista joihin peliä voisi jatkokehittää
+Peliin keksii helposti lähes loputtomasti jatkokehitysideoita, joiden maalailemiseen itsekin alkuperäisessä vaatimusmäärittelyssä sorruin
 
-- Kunnon alkuvalikko, jossa voisi olla myös mahdollisuus useille eri pelaajille eri tallennustiedostoille
+- Kunnon alkuvalikko sekä karttavalikko kun uusia karttoja valmistuu
 
-- Paljon erilaisia torneja, niille päivitysasteita tai -vaihtoehtoja, paljon erilaisia missioita sekä vihulaisia
+- Mahdollisuus päivittää torneja
+
+- Uusia torneja sekä vihollisia
+
+- Karttojen välinen progressio, eli esim. mahdollisuus tehdä missioiden välissä joistain torneista pysyvästi parempia
 
 - Eri vaikeustasoja
 
-- Hienompaa grafiikkaa (kehittäjä ei osaa itse, ehkä jonkun voisi tähän saada piirtämään jos jaksaisi panostaa)
+- Hienompaa grafiikkaa (kehittäjä ei osaa itse, ehkä jonkun voisi tähän saada piirtämään tai koittaa opetella)
 
 - Animaatioita
 
-- Jonkinlainen haasteemoodi jossa vihulaisia tulee loputtomasti yhä vaikenevissa aalloissa ja tarkoitus olisi selvitä mahdollisimman pitkään
+- Hienompi tekoäly vihulaisille (Tätä on jo hieman selvitetty mutta ei toteutettu)
 
-- Hienompi tekoäly vihulaisille
+- Karttojen generoiminen (Vaatisi hienomman tekoälyn)
 
-- Karttojen generoiminen?
-
-- Tarina?
-
-- Vaikka mitä
+- Dynaaminen polun luonti vihollisille, jolloin pelaajan voisi esim. antaa mahdollisuuden luoda kartalle muureja, joita viholliset voisivat sitten niin parhaaksi nähdessään rikkoa (Vaatisi hienomman tekoälyn)

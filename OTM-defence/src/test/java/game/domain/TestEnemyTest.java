@@ -17,12 +17,12 @@ public class TestEnemyTest {
     
     @Test
     public void enemySetsCorrectStartingHealth() {
-        assertEquals(800, testEnemy.getHealth());
+        assertEquals(600, testEnemy.getHealth());
     }
     
     @Test
     public void enemySetsCorrectMaxHealth() {
-        assertEquals(800, testEnemy.getMaxHealth());
+        assertEquals(600, testEnemy.getMaxHealth());
     }
     
     @Test
@@ -43,13 +43,13 @@ public class TestEnemyTest {
     @Test
     public void enemyCanLoseHealth() {
         testEnemy.takeDamage(100);
-        assertEquals(700, testEnemy.getHealth());
+        assertEquals(500, testEnemy.getHealth());
     }
     
     @Test
     public void enemyHealthCantGoNegative() {
         testEnemy.takeDamage(1000);
-        assertEquals(800, testEnemy.getHealth());
+        assertEquals(600, testEnemy.getHealth());
     }
     
     @Test
@@ -80,5 +80,15 @@ public class TestEnemyTest {
     public void enemyMovesCorrectlyUsingVector() {
         testEnemy.move(new Vector2(4, -101));
         assertEquals(new Vector2(104, 99), testEnemy.getLocation());
+    }
+    
+    @Test
+    public void enemySetsCorrectTime() {
+        assertEquals(0, (int)testEnemy.getTimeSinceDamageTaken());
+    }
+    
+    @Test
+    public void enemySetsCorrectReward() {
+        assertEquals(10, testEnemy.getMoneyOnKill());
     }
 }

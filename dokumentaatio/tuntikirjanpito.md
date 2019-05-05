@@ -12,4 +12,6 @@
 | 25.4. | 4 | Tukikohdan luokkien refaktorointia ja healthbarit |
 | 26.4. | 4 | Refaktorointia, testailua, javadocceja, checkstylen fiksailua, yms. |
 | 3.5. | 9 | Paljon refaktorointia, tornien ja bullet trailien luominen, about lopullisen toiminnallisuuden viimeistely |
-| Summa | 49 |
+| 4.5. | 1 | Vaatimusmäärittelyn uudelleenkirjoittaminen, dokumentaation kanssa kriiseily |
+| 5.5. | 8 | Dokumentaation kasaamista |
+| Summa | 58 |

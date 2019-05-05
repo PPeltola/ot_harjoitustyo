@@ -3,7 +3,6 @@ package game.map;
 import game.gui.actors.ObstacleActor;
 import game.gui.actors.TestBaseActor;
 import static com.badlogic.gdx.graphics.Color.TAN;
-import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.utils.Array;
 import game.domain.TestBase;
 import game.domain.Obstacle;

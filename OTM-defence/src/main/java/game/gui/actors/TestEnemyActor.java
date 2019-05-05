@@ -19,7 +19,7 @@ public class TestEnemyActor extends UnitActor {
 
     public TestEnemyActor(TestEnemy enemy) {
         super(enemy);
-        this.texture = new Texture("src/main/resources/assets/enemies/testenemy.png");
+        this.texture = new Texture("assets/enemies/testenemy.png");
         this.healthBar = new HealthBar(HEALTHBAR_WIDTH, HEALTHBAR_HEIGHT);
     }
     

@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import org.apache.commons.io.FileUtils;
 
 public class MapLoader {
 
@@ -18,30 +20,37 @@ public class MapLoader {
         this.map = map;
     }
 
-    public void loadMap(File file) {
+    public void loadMap(InputStream inputStream) {
         try {
+            File file = new File("temp");
+            FileUtils.copyInputStreamToFile(inputStream, file);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] fields = line.split(";");
 
-                switch (fields[0]) {
-                    case "Base":
-                        loadBase(fields);
-                        break;
-                    case "Obstacle":
-                        loadObstacle(fields);
-                        break;
-                    case "Path":
-                        loadPath(fields);
-                        break;
-                }
+                handleLine(fields);
             }
+            file.delete();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void handleLine(String[] fields) {
+        switch (fields[0]) {
+            case "Base":
+                loadBase(fields);
+                break;
+            case "Obstacle":
+                loadObstacle(fields);
+                break;
+            case "Path":
+                loadPath(fields);
+                break;
         }
     }
 

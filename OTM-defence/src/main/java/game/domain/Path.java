@@ -34,7 +34,6 @@ public class Path {
     public Path(Path path) {
         this.startingPoint = path.getSpawningPosition().cpy();
         this.points = QueueCloningUtil.copy(path.getPoints());
-        addPointToPath(startingPoint);
     }
     
     /**

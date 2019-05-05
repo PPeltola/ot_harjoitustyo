@@ -33,7 +33,7 @@ public class CollisionChecker {
     }
 
     public boolean checkUnitCollisionWithObstacle(Unit unit, Obstacle obstacle) {
-        return (!edgesOverlap(obstacle.getPolygon(), unit.getBounds()) && obstacle.getPolygon().contains(new Vector2(unit.getBounds().x, unit.getBounds().y)));
+        return (edgesOverlap(obstacle.getPolygon(), unit.getBounds()) && obstacle.getPolygon().contains(new Vector2(unit.getBounds().x, unit.getBounds().y)));
     }
 
     public boolean checkUnitCollisionWithUnit(Unit unit, Unit collidingWith) {

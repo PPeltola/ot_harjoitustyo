@@ -52,15 +52,19 @@ public class RunnerAi extends UnitAi {
         
         if (!stopped) {
             while (timePassedSinceLastAction >= 1.0 / enemy.getSpeed()) {
-                Vector2 currentMove = new Vector2(movingTo);
-                currentMove = currentMove.sub(enemy.getLocation());
-                if (currentMove.x == 0 || Math.abs(currentMove.y / currentMove.x) > Math.abs(currentMoveStart.y / currentMoveStart.x)) {
-                    enemy.move(0, MathUtils.clamp((int) (currentMove.y), -1, 1));
-                } else {
-                    enemy.move(MathUtils.clamp((int) (currentMove.x), -1, 1), 0);
-                }
+                takeStep();
                 timePassedSinceLastAction -= (1.0 / this.enemy.getSpeed());
             }
+        }
+    }
+
+    private void takeStep() {
+        Vector2 currentMove = new Vector2(movingTo);
+        currentMove = currentMove.sub(enemy.getLocation());
+        if (currentMove.x == 0 || Math.abs(currentMove.y / currentMove.x) > Math.abs(currentMoveStart.y / currentMoveStart.x)) {
+            enemy.move(0, MathUtils.clamp((int) (currentMove.y), -1, 1));
+        } else {
+            enemy.move(MathUtils.clamp((int) (currentMove.x), -1, 1), 0);
         }
     }
 
@@ -71,7 +75,6 @@ public class RunnerAi extends UnitAi {
 
     @Override
     public void collide(Unit unit) {
-        //setStopped(true);
     }
 
     @Override

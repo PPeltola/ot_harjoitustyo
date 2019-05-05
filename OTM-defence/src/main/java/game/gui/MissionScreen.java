@@ -59,7 +59,7 @@ public class MissionScreen implements Screen {
         font = new BitmapFont();
         font.setColor(255 / 255f, 225 / 255f, 50 / 255f, 255 / 255f);
         
-        constructTowerButton = new Image(new Texture("src/main/resources/assets/buttons/buildturret.png"));
+        constructTowerButton = new Image(new Texture("assets/buttons/buildturret.png"));
         constructTowerButton.setBounds(20, 688, 128, 64);
 
         constructTowerButton.addListener(new ClickListener() {
@@ -74,8 +74,6 @@ public class MissionScreen implements Screen {
                         Gdx.input.setInputProcessor(new InputAdapter() {
                             public boolean touchDown(int x, int y, int pointer, int button) {
                                 if (button == Input.Buttons.LEFT) {
-                                    System.out.println(x);
-                                    System.out.println(y);
                                     if (!(new Rectangle(20, 688, 128, 64).contains(x, 768 - y)) && placingTower && canPlaceTower) {
                                         logic.placeTower(new TestTowerActor(new TestTower(new Vector2(Gdx.input.getX(), 768 - Gdx.input.getY()))));
                                         

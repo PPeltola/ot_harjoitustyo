@@ -38,7 +38,7 @@ public class TurretAi extends TowerAi {
 
     @Override
     public void checkTarget(Array<Unit> units) {
-        if (!hasTarget || target.getLocation().dst(tower.getLocation()) > tower.getAttackRange()) {
+        if (!hasTarget || target.getLocation().dst(tower.getLocation()) > tower.getRange().radius) {
             hasTarget = false;
             
             for (Unit unit : units) {

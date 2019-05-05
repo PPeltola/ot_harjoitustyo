@@ -34,6 +34,11 @@
             <version>1.9.9</version>
             <classifier>natives-desktop</classifier>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -45,6 +50,9 @@
                     <excludes>
                         <exclude>game/gui/*</exclude>
                         <exclude>game/gui/actors/*</exclude>
+                        <exclude>game/launcher/*</exclude>
+                        <exclude>game/map/*</exclude>
+                        <exclude>game/logic/MissionLogic.class</exclude>
                     </excludes>
                 </configuration> 
                 <executions>
@@ -87,10 +95,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>game.logic.Launcher</mainClass>
-                                </transformer>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                                    <resource>resources</resource>
+                                    <mainClass>game.launcher.Launcher</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

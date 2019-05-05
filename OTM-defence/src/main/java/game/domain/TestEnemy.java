@@ -1,6 +1,5 @@
 package game.domain;
 
-import game.gui.HealthBar;
 import game.logic.ai.RunnerAi;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;

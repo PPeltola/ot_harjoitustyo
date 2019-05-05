@@ -15,8 +15,8 @@ public class TestTowerActor extends TowerActor {
 
     public TestTowerActor(TestTower tower) {
         super(tower);
-        this.baseTexture = new Texture("src/main/resources/assets/towers/testtower.png");
-        this.turretTexture = new Texture("src/main/resources/assets/towers/testtowerturret.png");
+        this.baseTexture = new Texture("assets/towers/testtower.png");
+        this.turretTexture = new Texture("assets/towers/testtowerturret.png");
     }
     
     @Override

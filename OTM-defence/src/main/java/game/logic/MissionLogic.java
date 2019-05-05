@@ -7,7 +7,6 @@ import game.gui.actors.ObstacleActor;
 import game.gui.actors.TestEnemyActor;
 import game.gui.actors.UnitActor;
 import com.badlogic.gdx.math.Circle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Array;
 import game.domain.Obstacle;
@@ -17,8 +16,6 @@ import game.domain.Tower;
 import game.gui.MissionScreen;
 import game.domain.Unit;
 import game.gui.actors.TowerActor;
-import game.logic.CollisionChecker;
-import java.io.File;
 
 public class MissionLogic {
     
@@ -53,11 +50,11 @@ public class MissionLogic {
     }
 
     public void initStage(String mapName) {
-        mapLoader.loadMap(new File("src/main/resources/assets/maps/" + mapName));
+        mapLoader.loadMap(getClass().getResourceAsStream("/assets/maps/" + mapName));
         addActor(map.getBaseActor());
     }
 
-    public void addActor(Actor actor) {
+    private void addActor(Actor actor) {
         screen.addActorToStage(actor);
     }
     
@@ -94,50 +91,74 @@ public class MissionLogic {
         elapsedTime += f;
         timeSinceLastSpawn += f;
         
-        if (!map.getBaseActor().getBase().isAlive()) {
-            gameRunning = false;
-        }
+        checkGameOver();
 
         if (timeSinceLastSpawn >= SPAWNRATE / ((2 * elapsedTime) / SPAWNRATE_HALF_LIFE)) {
-            Path path = map.getPath((int) elapsedTime % 3);
-            TestEnemy enemy = new TestEnemy(path.getSpawningPosition());
-            enemy.setPath(path);
-            addUnit(new TestEnemyActor(enemy));
-            timeSinceLastSpawn = 0;
+            spawnEnemy();
         }
         
-        for (Tower tower : towers) {
-            tower.checkTarget(units);
-            tower.updateTrails(f);
-        }
+        updateTowers(f);
         
         for (int i = 0; i < unitActors.size; i++) {
             Unit unit = unitActors.get(i).getUnit();
             
-            if (collision.checkUnitCompleteOverlapWithBase(unit, map.getBaseActor().getBase())) {
-                unit.overlap(map.getBaseActor().getBase());
-            }
+            checkMapCollision(unit);
 
-            for (ObstacleActor obstacleActor : map.getObstacleActors()) {
-                if (collision.checkUnitCollisionWithObstacle(unit, obstacleActor.getObstacle())) {
-                    unit.collide(obstacleActor.getObstacle());
-                }
-            }
-
-            for (int j = i + 1; j < units.size; j++) {
-                Unit other = units.get(j);
-
-                if (other != unit && collision.checkUnitCollisionWithUnit(unit, other)) {
-                    other.collide(unit);
-                    unit.collide(other);
-                }
-            }
+            checkUnitCollision(i, unit);
             
-            if (!unit.isAlive()) {
-                gainMoney(unit.getMoneyOnKill());
-                removeUnit(unitActors.get(i));
+            checkUnitAlive(unit, i);
+        }
+    }
+
+    private void updateTowers(float f) {
+        for (Tower tower : towers) {
+            tower.checkTarget(units);
+            tower.updateTrails(f);
+        }
+    }
+
+    private void checkGameOver() {
+        if (!map.getBaseActor().getBase().isAlive()) {
+            gameRunning = false;
+        }
+    }
+
+    private void checkUnitAlive(Unit unit, int i) {
+        if (!unit.isAlive()) {
+            gainMoney(unit.getMoneyOnKill());
+            removeUnit(unitActors.get(i));
+        }
+    }
+
+    private void checkUnitCollision(int i, Unit unit) {
+        for (int j = i + 1; j < units.size; j++) {
+            Unit other = units.get(j);
+            
+            if (other != unit && collision.checkUnitCollisionWithUnit(unit, other)) {
+                other.collide(unit);
+                unit.collide(other);
             }
         }
+    }
+
+    private void checkMapCollision(Unit unit) {
+        if (collision.checkUnitCompleteOverlapWithBase(unit, map.getBaseActor().getBase())) {
+            unit.overlap(map.getBaseActor().getBase());
+        }
+        
+        for (ObstacleActor obstacleActor : map.getObstacleActors()) {
+            if (collision.checkUnitCollisionWithObstacle(unit, obstacleActor.getObstacle())) {
+                unit.collide(obstacleActor.getObstacle());
+            }
+        }
+    }
+
+    private void spawnEnemy() {
+        Path path = map.getPath((int) elapsedTime % 3);
+        TestEnemy enemy = new TestEnemy(path.getSpawningPosition());
+        enemy.setPath(path);
+        addUnit(new TestEnemyActor(enemy));
+        timeSinceLastSpawn = 0;
     }
     
     public boolean canAfford(int cost) {

@@ -15,7 +15,6 @@ public abstract class Tower {
     protected Circle range;
     protected float fireRate;
     protected int damage;
-    protected int attackRange;
     protected int cost;
     protected Array<BulletTrail> trails;
     protected float turretAngle;
@@ -40,10 +39,6 @@ public abstract class Tower {
 
     public float getFireRate() {
         return fireRate;
-    }
-
-    public int getAttackRange() {
-        return attackRange;
     }
 
     public Vector2 getLocation() {
