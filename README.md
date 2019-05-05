@@ -20,6 +20,8 @@ Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Ni
 
 ## Komentorivitoiminnot
 
+### Testaus
+
 Testit suoritetaan komennolla
 
 <pre>
@@ -34,8 +36,31 @@ mvn jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
 
+### Suoritettavan jarin generointi
+
+<pre>
+mvn package
+</pre>
+
+Generoi hakemistoon suoritettavan jar-tiedoston taget-hakemistoon
+
+### JavaDoc
+
 JavaDocit generoidaan komennolla 
 
 <pre>
 mvn javadoc:javadoc
 </pre>
+
+Ne näkee selaimella tiedostosta _target/site/apidocs/index.html_
+
+### Checkstyle
+
+[Checkstylen](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) tarkistukset suoritetaan komennolla
+
+<pre>
+ mvn jxr:jxr checkstyle:checkstyle
+</pre>
+
+Virheilmoitukset löytyvät tiedostosta _target/site/checkstyle.html_
+
