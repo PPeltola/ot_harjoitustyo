@@ -14,7 +14,7 @@ _game.domain_-luokan testit testavat lähinnä jokaisen luokan perustoiminnallis
 
 Käyttöliittymäluokkia ja niistä ainakin tavalla tai toisella riippuvaisia MapLoader- sekä MissionLogic- luokkia lukuunottamatta on testikattavuus 89%.
 
-kuva tähän
+<img src="https://raw.githubusercontent.com/PPeltola/ot_harjoitustyo/master/dokumentaatio/kuvat/testikattavuus.png">
 
 Varsinkin MissionLogic:issa olisi saattanut olla joitain metodeja tai metodin osia joita olisi voinut koittaa eriyttää ja testata, mutta yritykset johtivat monesti vain uusiin libGDX:n virheimoituksiin, joten testaaja näki että luokan toimintaa oli helpompi ja suoraviivaisempi testata manuaalisilla järjestelmätesteillä. Myös _game.map_-pakkauksen Map-luokka jäi vielä testaamatta.
 
