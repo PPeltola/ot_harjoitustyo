@@ -4,7 +4,7 @@
 
 Ohjelma on toteutettu pelien luomiseen tarkoitetulla libGDX-ohjelmistokehyksellä, joka vaikuttaa myös ohjelman pakkausrakenteseen. Pakkausrakenne on seuraava:
 
-kuva tähän
+<img src="https://raw.githubusercontent.com/PPeltola/ot_harjoitustyo/master/dokumentaatio/kuvat/pakkausarkkitehtuuri.jpg">
 
 _game.launcher_ luo libGDX:n Game-olion sekä konfiguroi sille mm. ruudun koon. _game.gui_ sisältää pelin (vielä tällä hetkellä ainoan) näkymän eli libGDX:n Screen-rajapinnan toteuttavan luokan. libGDX:n suoritusprosessi toimii niin, että peliprosessin aktiivisen ruudun _render(float delta)_-metodia kutsutaan jatkuvalla syötöllä, parametrina viime kutsusta kulunut aika sekunteina. _game.gui_:n näkymäluokka siis vastaa kyseisen näkymän ylläpidosta ja piirtämisestä. 
 
@@ -26,7 +26,7 @@ Käyttöliittymän ainoa suoraan interaktiivinen osa on nappi, jota painamalla p
 
 Sovelluksen loogisen datamallin muodostavat _game.domain_-pakkauksen luokat Obstacle, Path, TestBase, TestEnemy ja TestTower sekä _game.map_ luokan Map, _game.logic_ luokan MissionLogic, _game.gui_ luokan BulletTrail sekä _game.logic.ai_-luokan RunnerAi ja TurretAi.
 
-kuva tähän
+<img src="https://raw.githubusercontent.com/PPeltola/ot_harjoitustyo/master/dokumentaatio/kuvat/sovelluslogiikka.jpg">
 
 Logiikan päivittämisestä vastaa MissionLogic:in update-metodi, mutta pienemmistä muutoksista vastaavat yleensä yksiköt itse. Esim. update-metodissa kutsutaan kaikkien olemassa olevien tornien checkTarget-metodia joka taas kutsuu tornin tekoälyn checkTarget-metodia joka hoitaa kohteen tarkastamisen määretellyllä tavalla.
 
