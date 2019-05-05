@@ -1,6 +1,6 @@
 # OTM-defence
 
-Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Nimi vaihtuu kun keksin hyvän.
+Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Nimi ei sitten vaihtunutkaan.
 
 ## Dokumentaatio
 
@@ -16,7 +16,7 @@ Ohjelmistotekniikka-kurssille harjoitustyönä tehtävä tower defence -peli. Ni
 
 ## Releaset
 
-[Final](https://github.com/...)
+[Final](https://github.com/PPeltola/ot_harjoitustyo/releases/tag/Final)
 
 ## Komentorivitoiminnot
 
