@@ -56,7 +56,7 @@ Ne näkee selaimella tiedostosta _target/site/apidocs/index.html_
 
 ### Checkstyle
 
-[Checkstylen](https://github.com/mluukkai/OtmTodoApp/blob/master/checkstyle.xml) tarkistukset suoritetaan komennolla
+Checkstylen tarkistukset suoritetaan komennolla
 
 <pre>
  mvn jxr:jxr checkstyle:checkstyle
