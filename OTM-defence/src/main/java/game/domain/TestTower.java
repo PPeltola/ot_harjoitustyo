@@ -12,6 +12,14 @@ public class TestTower extends Tower {
     private static final int STARTING_ATTACK_RANGE = 128;
     private static final int BASE_COST = 50;
     
+    /**
+     * Creates the TestTower by calling the Tower constructor as well as
+     * setting the default values to their defined static ones.
+     * 
+     * @param location the desired location
+     *
+     * @return the created TestTower
+     */
     public TestTower(Vector2 location) {
         super(location);
         this.damage =  STARTING_DAMAGE;

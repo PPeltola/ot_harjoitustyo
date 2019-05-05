@@ -51,7 +51,7 @@
                         <exclude>game/gui/*</exclude>
                         <exclude>game/gui/actors/*</exclude>
                         <exclude>game/launcher/*</exclude>
-                        <exclude>game/map/*</exclude>
+                        <exclude>game/map/MapLoader.class</exclude>
                         <exclude>game/logic/MissionLogic.class</exclude>
                     </excludes>
                 </configuration> 

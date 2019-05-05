@@ -15,7 +15,13 @@ public class TurretAi extends TowerAi {
         this.tower = tower;
         this.hasTarget = false;
     }
-
+    
+    /**
+     * Adds delta time to timePassedSinceLastAction, adjusts the turret angle 
+     * if a target exists and fires at the target if enough time has passed
+     * 
+     * @param f delta time
+     */
     @Override
     public void act(float f) {
         timePassedSinceLastAction += f;
@@ -35,7 +41,14 @@ public class TurretAi extends TowerAi {
         }
 
     }
-
+    
+    /**
+     * Checks through the given array of units and picks one in range if 
+     * one exists and this Tower doesn't have a target yet. Also checks 
+     * if current target is out of range and untargets it if so
+     * 
+     * @param units the array of existing units
+     */
     @Override
     public void checkTarget(Array<Unit> units) {
         if (!hasTarget || target.getLocation().dst(tower.getLocation()) > tower.getRange().radius) {

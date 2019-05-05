@@ -26,7 +26,7 @@ public abstract class Base {
      * Subtracts the given damage from health if there is enough health left,
      * otherwise kills the Base, which will lead to losing the game.
      *
-     * @param damage the amount of damage taken
+     * @param amount the amount of damage taken
      */
     public void loseHealth(int amount) {
         if (health <= amount) {

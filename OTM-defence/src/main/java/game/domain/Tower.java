@@ -19,6 +19,14 @@ public abstract class Tower {
     protected Array<BulletTrail> trails;
     protected float turretAngle;
     
+    /**
+     * Creates the Tower by setting location to the given one and initializing
+     * the other variables.
+     * 
+     * @param location the desired location
+     *
+     * @return the created Tower
+     */
     public Tower(Vector2 location) {
         this.location = location;
         this.trails = new Array<>();
@@ -69,6 +77,12 @@ public abstract class Tower {
         return trails;
     }
     
+    /**
+     * Updates the Tower's BulletTrails by removing the ones that have been 
+     * marked as done and updating the rest.
+     * 
+     * @param f delta time
+     */
     public void updateTrails(float f) {
         Iterator<BulletTrail> trailsIter = trails.iterator();
         BulletTrail trail;
@@ -86,5 +100,4 @@ public abstract class Tower {
     public void checkTarget(Array<Unit> units) {
         ai.checkTarget(units);
     }
-    
 }
